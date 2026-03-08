@@ -1,0 +1,39 @@
+# =============================================================================
+#  .gitignore — Azure ML Project
+# =============================================================================
+
+# ── NEVER commit these ────────────────────────────────────────────────────────
+config.env                  # Contains subscription IDs and storage keys
+*.env                       # Any environment file with secrets
+.env
+secrets/
+*.key
+*.pem
+
+# ── Azure ML outputs ─────────────────────────────────────────────────────────
+azureml-logs/
+outputs/
+.azureml/
+mlruns/                     # Local MLflow — logs should go to workspace, not here
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# ── Data ─────────────────────────────────────────────────────────────────────
+# Commit assets.yml and MLTable YAML, not the actual data files
+data/*.csv
+data/*.parquet
+data/raw/
+
+# ── Python ───────────────────────────────────────────────────────────────────
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# ── OS ───────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+setup.log

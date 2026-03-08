@@ -1,0 +1,18 @@
+# =============================================================================
+#  MLTable — Schema definition for AutoML (Block 8)
+#  This file MUST live in the same folder as your CSV data file.
+#  Referenced by data/assets.yml as type: mltable
+#
+#  After uploading this folder to blob storage (setup.sh Step 12),
+#  it is registered as the 'training-mltable' data asset.
+# =============================================================================
+
+paths:
+  - file: ./train.csv       # path relative to THIS file — adjust to your filename
+
+transformations:
+  - read_delimited:
+      delimiter: ','
+      encoding: utf8
+      header: all_files_same_headers
+      include_path_column: false

@@ -1,0 +1,38 @@
+# =============================================================================
+#  DATA ASSET MANIFEST
+#  Defines all data assets to register in the Azure ML workspace.
+#  Used by: scripts/register_data_assets.py (called from setup.sh Step 9)
+#
+#  blob_path: path INSIDE the blob container (DATA_CONTAINER in config.env)
+#  type:      uri_file | uri_folder | mltable
+# =============================================================================
+
+assets:
+
+  # ── Single file assets (URI_FILE) ──────────────────────────────────────────
+  - name: "training-data"
+    version: "1"
+    description: "Main training dataset — CSV format"
+    blob_path: "data/train.csv"
+    type: "uri_file"
+
+  - name: "validation-data"
+    version: "1"
+    description: "Held-out validation set"
+    blob_path: "data/validation.csv"
+    type: "uri_file"
+
+  # ── Folder assets (URI_FOLDER) ─────────────────────────────────────────────
+  - name: "raw-data-folder"
+    version: "1"
+    description: "All raw data files before preprocessing"
+    blob_path: "data/raw/"
+    type: "uri_folder"
+
+  # ── MLTable assets (required for AutoML) ───────────────────────────────────
+  # The blob_path must contain an 'MLTable' YAML file alongside the data
+  - name: "training-mltable"
+    version: "1"
+    description: "MLTable for AutoML — includes schema definition"
+    blob_path: "data/mltable/"
+    type: "mltable"
