@@ -1,4 +1,5 @@
 # ☁️ Azure ML SDK v2 — Project Blueprint
+**Author:** Alexander Castillo | Industrial Data Scientist
 
 Standard template for any data science project on Azure Machine Learning.  
 Clone this repo, fill in `config.env`, and run `setup.sh` to get a fully
